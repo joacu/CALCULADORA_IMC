@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA IMC</title>
+</head>
+<body>
+
+    <!-- FORMULARIO HTML -->
+
+    <h1>Calculadora IMC: Indice de Masa Muscular</h1>
+
+    Ingrese su PESO (kg): <input type="text" id="v1" name="v1"> <br><br>
+
+    Ingrese su ESTATURA (mts): <input type="text" id="v2" name="v2"><br><br>
+
+    <button onclick="calcular();">CALCULAR IMC</button><br>
+    <p id="imc"></p>
+
+    <!-- SCRIPT PARA CALCULAR IMC -->
+
+    <script type="text/javascript">
+
+        function calcular(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+
+            let i1=parseFloat(v1,10);
+            let i2=parseFloat(v2,10);
+
+            let res="";
+            let imc= i1/(i2*i2);
+
+            alert("Su indice de masa corporal es: "+ Math.round(imc));
+
+            if(imc < 18.5) {
+                res="peso inferior al normal";
+            }else if(imc < 24.9) {
+                res="peso normal";
+            }else if(imc < 29.9) {
+                res="peso superior al normal";
+            }else{
+                res="obesidad"
+            }
+            document.getElementById("imc").innerHTML=res;
+        }
+           
+    </script>
+   
+</body>
+</html>
+
+
+
